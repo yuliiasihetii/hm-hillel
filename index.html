@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../hm7/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Форма</title>
 </head>
+
 <body>
-    <form>
+    
+    <form class="wrapper">
+        <div class="flex">   
         <div class="block">
             <p class="p-after">Type</p>
             <select>
@@ -16,62 +20,66 @@
                 <option value="">Car</option>
                 <option value="">Bus</option>
             </select>
-             <p class="p-after">SubType</p>
-              <input class="input" type="text" value="Fake">
-              <p>Specs</p>
-               <input class="input" type="text" value="Nullam porttitor lacus at turpis. Do...">
-               <p>Driver</p>
-                <select class="select-fon">
-                    <option disabled selected value="">Select</option>
-                    <option value="">Mr. Brown</option>
-                    <option value="">Mr.Howard</option>
-                    <option value="">Mr.Whitaker</option>
-                </select>
-            </div>
-            <div class="block">
-                <p class="p-after">Vehicle ID Number (VIN)</p>
-                <input class="input" type="text" value="WBA3A5C50123">
-                <p class="p-after">Make</p>
-                <input class="input" type="text" value="Fake">
-                <p class="p-after">Model</p>
-                <input class="input" type="text" value="Fake">
-                <div>
-                    <div class="block2">
+            <p class="p-after">SubType</p>
+            <input class="input" type="text" value="Fake">
+            <p>Specs</p>
+            <input class="input" type="text" value="Nullam porttitor lacus at turpis. Do...">
+            <p>Driver</p>
+            <select class="select-fon">
+                <option disabled selected value="">Select</option>
+                <option value="">Mr. Brown</option>
+                <option value="">Mr.Howard</option>
+                <option value="">Mr.Whitaker</option>
+            </select>
+        </div>
+        <div class="block">
+            <p class="p-after">Vehicle ID Number (VIN)</p>
+            <input class="input" type="text" value="WBA3A5C50123">
+            <p class="p-after">Make</p>
+            <input class="input" type="text" value="Fake">
+            <p class="p-after">Model</p>
+            <input class="input" type="text" value="Fake">
+            <div>
+                <div class="block2">
                     <p class="p-after">Year</p>
-                    <input class="input1" type="text" value="2008"></div>
-                    <div class="block2">
+                    <input class="input1" type="text" value="2008">
+                </div>
+                <div class="block2">
                     <p class="p2 p-after">GVW</p>
-                    <input class="input2" type="text" value="20092"></div>
-                    <div class="block2">
+                    <input class="input2" type="text" value="20092">
+                </div>
+                <div class="block2">
                     <p class="p2 p-after">Unit</p>
                     <select class="select2" name="" id="">
                         <option value="">LBS</option>
                         <option value="">BSL</option>
                         <option value="">SLB</option>
                     </select>
-                   </div>
                 </div>
             </div>
+        </div>
         <div class="block">
             <p class="p-after">License Plate</p>
             <input class="input" type="text" value="XK-H-2ASDASD">
             <p>Port Pass RFID</p>
             <div class="checkbox-div">
-            <input class="checkbox-input" type="text" value="Type here"></input>
-            <input class="checkbox" type="checkbox" name="" id=""> </div>
-            
+                <input class="checkbox-input" type="text" placeholder="Type here"></input>
+                <input class="checkbox" type="checkbox" name="" id="">
+            </div>
+
             <p class="p-after">Ownership</p>
             <select name="" id="">
                 <option>Owned</ontion>
                 <option> Not owned</ontion>
             </select>
-            <p >Truck Type</p>
+            <p>Truck Type</p>
             <select name="" id="">
                 <option value="">Sleeper</option>
                 <option value="">Not sleeper</option>
             </select>
         </div>
-        <div class="block">
+
+        <div class="bloc2 block">
             <p class="p">Registration</p>
             <p class="p-after">State</p>
             <select name="" id="">
@@ -82,17 +90,21 @@
             <p class="p-after">Data</p>
             <input class="input" type="text" value="09/01/2018">
             <div>
-                <div class="block2"> <p class="p-after" >GVW</p> 
-                <input class="input3" type="text" value="42283"> </div>
-                <div class="block2"> <p class="p3 p-after" >Unit</p>
-                <select class="select3" name="" id="">
-                    <option value="">KGS</option>
-                    <option value="">GSK</option>
-                    <option value="">SKG</option>
-                </select> </div>
+                <div class="block2">
+                    <p class="p-after">GVW</p>
+                    <input class="input3" type="text" value="42283">
+                </div>
+                <div class="block2">
+                    <p class="p3 p-after">Unit</p>
+                    <select class="select3" name="" id="">
+                        <option value="">KGS</option>
+                        <option value="">GSK</option>
+                        <option value="">SKG</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="block">
+        <div class="bloc block">
             <p class="p-after">Restrictions</p>
             <select name="" id="">
                 <option value="">Highway</option>
@@ -103,9 +115,14 @@
             <input class="input" type="text" value="05/25/2018">
             <p>Doc. Image</p>
             <div class="img-div">
-            <input class="btn" type="submit" value="Upload">
-            <img class="img" src="../hm7/img/ic_cloud_upload_white_18dp.png" alt="" width="20"></div>
+                <input type="file" placeholder="Upload" id="actual-btn" hidden>
+                <label class="btn" for="actual-btn"><img class="img" src="img/ic_cloud_upload_white_18dp.png" alt=""
+                        width="20"> Upload</label>
+            </div>
         </div>
+    </div>
     </form>
+
 </body>
+
 </html>
