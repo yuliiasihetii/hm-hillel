@@ -1,0 +1,109 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 0 0 40px;
+}
+.block{
+    display: inline-block;
+   
+    vertical-align: bottom;
+    margin: 0 50px 0 0;
+
+}
+.block2{
+    display: inline-block;
+   
+}
+.input1, .input, .input2, .input3, select, .select2, .select3{
+    border-radius: 5px;
+    border-bottom: 2px solid #666;
+    border-top: 0 ;
+    border-left: 0 ;
+    border-right: 0;
+    border-color: rgb(240, 245, 245);
+    font-size: 15px;
+    padding: 10px 5px;
+}
+.input1, .input2 {
+    width: 45px;
+}
+.input{
+    width: 210px;
+}
+.input2{
+    margin: 0 0 0 20px;
+}
+.input3{
+    width: 80px;
+    margin: 0 10px 0 0 ;
+}
+select{
+    width: 225px;
+}
+.select2{
+    margin: 0 0 0 20px;
+    width: 60px;
+}
+.select3{
+    width: 100px;
+    margin: 0 0 0 10px;
+}
+.checkbox-div{
+    position: relative;
+}
+p{
+    margin: 15px 0 7px 5px;
+    font-size: small;
+    color: #333;
+}
+.p-after::after{
+    content: " *";
+    color: tomato;
+}
+.checkbox-input{
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 5px 5px 30px;
+    width: 185px;
+    color: #999;
+    background-color:rgb(240, 245, 245) ;
+    padding: 9px 5px 9px 30px;
+    font-size: 15px;
+}
+.p{
+    font-size: 15px;
+}
+.select-fon{
+    border: 0;
+    background-color: rgb(240, 245, 245);
+    color: #999;
+    padding: 11px 5px;
+}
+.p2{
+    margin: 15px 0 7px 25px;
+}
+.p3{margin: 15px 0 7px 15px;
+}
+.btn{
+    background-color: rgb(38, 76, 158);
+    padding: 11px 30px 11px 45px;
+    border-radius: 5px ;
+    border: 0;
+    color: white;
+    font-size: 15px;
+}
+.img{
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+}
+.img-div{
+    position: relative;
+}
+  .checkbox{
+    position: absolute;
+    left: 5px;
+    bottom: 8px;
+}
+
+  
+  
