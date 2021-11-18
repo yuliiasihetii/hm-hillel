@@ -1,0 +1,140 @@
+body{
+    background-color: rgb(247, 245, 240);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    font-weight: 400;
+    line-height: 1.2;
+    font-size: 20px;
+}
+.h{
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+.form-label{
+    text-decoration: underline;
+    vertical-align: middle;
+    margin: 0 10px 0 25px;
+    padding-top: 5px ;
+}
+.form-select{
+    font-size: 15px;
+    text-align: center;
+    padding: 4px;
+    margin: ;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+.img{
+    margin: 20px 20px 0 10px;
+    border-radius: 20px;
+    width: 400px;
+    
+}
+.text{
+    background-color: rgb(241, 238, 232);
+    padding: 10px;
+    border-radius: 10px ;
+    font-size: 24px;
+}
+.form-taxtarea{
+    margin: 0 0 15px ;
+    border: 2px solid grey;
+    border-radius: 5px;
+    display: flex;
+    box-shadow: inset -4px 1px 35px -21px rgba(0,0,0,0.75);
+}
+.form-input{
+    padding: 10px 50px;
+    font-size: 17px;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+.flax{
+    display: flex; 
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+
+}
+.flax-container{
+    display: flex;
+    justify-content: center;
+
+}
+.flax-textarea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.p{
+    margin-left: -270px;
+}
+.wrapper{
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+@media(max-width: 1100px){
+    .flax{
+        display: inline-block;
+    }
+    .img{
+        float: left;
+        margin-top: 40px;
+    }
+
+}
+@media(max-width: 600px ){
+    .flax{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .text{
+        margin-bottom: 0;
+    }
+    .img{
+        margin: 0;
+        width: 100%;
+    }
+    .form-taxtarea, .form-input{
+        width: 100%;
+    }
+}
+@media( max-width: 500px){
+    .p{
+        margin: 0;
+        align-self: flex-start;
+    }
+    .h{
+        font-size: 25px;
+    }
+}
+@media( max-width: 413px){
+    .h{
+        font-size: 20px;
+    }
+    .text, .form-label, .p{
+        font-size: 17px;
+    }
+    .form-label{
+        margin-left : 0;
+    }
+    .form-select{
+        width: 60%;
+    }
+    .form-label{
+        width: 39%;
+    }
+}
+@media( max-width: 310px){
+    .flax-textarea, .form-input{
+        width: 250px;
+        font-size: 15px;
+    }
+    .form-input{
+        padding-left: 15px;
+    }
+}
