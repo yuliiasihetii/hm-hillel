@@ -4,15 +4,40 @@
 body{
     font-family: "Poppins", sans-serif;
 }
-.container{
-    max-width: 1110px;
-    margin: 0 auto;
+.header{
+    position: fixed;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
+.header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+#menu-toggle{
+    opacity: 0;
+}
+
+
+
 .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 35px auto;
+    position: relative;
+    z-index: 2;
+    height: 100px;
+}
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
 }
 .navbar-nav{
     margin-top: 5px;
@@ -25,10 +50,22 @@ body{
 .navbar-list a{
     text-decoration: none;
     color: #323232;
+    padding: 5px 5px;
+}
+.navbar-list a:hover{
+    background-color: rgb(255, 231, 221);
+    border-radius: 5px;
+
 }
 .navbar-list .active{
     font-weight: 700;
     color: #F78434;
+    padding: 5px 5px;
+    transition: .2s;
+}
+.navbar-list .active:hover{
+    background-color: rgb(248, 246, 246);
+    border-radius: 5px;
 }
 .row{
     display: flex;
@@ -55,6 +92,7 @@ body{
 }
 .intro-img{
     margin-left: 15px;
+    animation: img-scale 3s 2 linear 1s;
 }
 .intro-form{
     position: relative;
@@ -70,6 +108,13 @@ body{
     border: none;
     cursor: pointer;
     text-decoration: none;
+    transition: .2;
+}
+.btn:hover{
+    background-color: lightgray;
+}
+.intro-sect{
+    margin-top: 115px;
 }
 .intro-form{
     overflow: hidden;
@@ -98,7 +143,7 @@ body{
 .logo-list{
     display: flex;
     justify-content: space-between;
-    margin-top: 32px;
+    margin-top: 102px;
     text-decoration: none;
     align-items: center;
 }
@@ -116,7 +161,7 @@ body{
 }
 .row-block3{
     display: flex;
-    margin-top: 100px;
+    margin-top: 102px;
     margin-bottom: 376px;
     background-color: #fff;
 }
@@ -213,6 +258,7 @@ body{
     cursor: pointer;
     text-decoration: none;
     margin-left: 20px;
+    transition: .2s;
 }
 .btn-product::before{
     content: url(../img/play.svg);
@@ -220,11 +266,25 @@ body{
     position: absolute;
     margin-left: -20px;
 }
-
-
+.btn-product:hover{
+    background-color: lightgray;
+    color: #fff;
+}
+@keyframes img-scale{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.03);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
 
 
 @media(max-width:1200px){
+   
     .intro-img{
         max-width: 500px;
     }
@@ -241,10 +301,7 @@ body{
     .product-sect{
         margin-top: 372px;
     }
-    .navbar{
-        margin-bottom: 68px;
-        margin-top: 35px;
-    }
+   
     .logo-list{
         margin-bottom: 100px;
     }
@@ -255,17 +312,102 @@ body{
     .block3-absolut{
         right: -80px;
     }
+
 }
-@media(max-width: 1035px){
+@media(max-width: 1050px){
+    .menubox{
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        margin-left: 10px;
+        padding: 80px 0;
+        list-style: none;
+        background-color: rgb(255, 231, 221);
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+        transition-duration: .25s;
+    }
+    .menu-item {
+        display: block;
+        padding: 12px 24px;
+        color: #323232;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+    }
+    .menu-item:hover {
+        background-color: #CFD8DC;
+    }
+ 
+    
+    .menu-btn{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right:0;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .menu-btn > span,
+      .menu-btn > span::before,
+      .menu-btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #F78434;
+        transition-duration: .25s;
+    }
+      .menu-btn > span::before {
+        content: '';
+        top: -8px;
+      }
+      .menu-btn > span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .navbar{
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+    .navbar img{
+        margin: 15px 0;
+        align-self: flex-start;
+        max-width: 30%;
+    }
+    .navbar-list{
+        justify-content: space-between;
+    }
+    .navbar-list{
+        flex-wrap: wrap;
+        justify-content: start;
+        margin-left:0 ;
+
+    }
+    .intro-img{
+        margin-top: 20px;
+    }
+    .block3-absolut{
+        padding: 32px 0 32px 94px ;
+        bottom: 87px;
+        right: -1px;
+        border-radius:15px 0 0 15px;
+        
+    }
     .navbar-list{
         gap: 20px;
     }
-    .navbar img{
-        max-width: 30%;
-        margin: 35px 0 ;
-    }
     .col{
-        max-width: 100%;
+        max-width: 90%;
+        margin: 0;
     }
    .row{
        flex-direction: column-reverse;
@@ -274,7 +416,7 @@ body{
    }
    .main-heading{
        margin-top: 0;
-       margin-left: o;
+       margin-left: 0;
    }
    .container{
        max-width: 700px;
@@ -295,9 +437,7 @@ body{
    .logo-list img{
     max-width: 150px;
 }
-.block3-absolut{
-    right: -40px;
-}
+
 .product-sect{
     margin-top: 752px;
 }
@@ -305,9 +445,9 @@ body{
     padding-top: 40px
 }
 .product-block{
-       overflow: visible;
+    overflow: visible;
    }
-    .product-block-img{
+   .product-block-img{
         left: 0;
         top: -500px;
         max-width: 100%;
@@ -319,17 +459,39 @@ body{
         margin-top: 20px;
         margin-bottom: 60px;
     }
+    #menu-toggle:checked ~ .menu-btn > span{
+        transform: rotate(45deg);
+      }
+      #menu-toggle:checked ~ .menu-btn > span::before{
+        top: 0;
+        transform: rotate(0);
+      }
+      #menu-toggle:checked ~ .menu-btn > span::after{
+        top: 0;
+        transform: rotate(90deg);
+      }
+      #menu-toggle:checked ~ .menubox{
+        visibility: visible;
+        left: 0;
+      }
+    .menu-btn{
+        top: 20px;
+        right: 20px;
+    }
+    .navbar{
+        height: 60px;
+    }
+    .intro-sect{
+        margin-top: 50px;
+    }
+
 }
 @media(max-width: 700px){
-    .navbar img{
-        max-width: 20%;
-    }
-    .navbar-list{
-        gap: 15px;
-        margin: 0;
-    }
-    .logo-list img{
-        max-width: 115px;
+   
+    .logo-list{
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
     }
     .main-heading{
         font-size: 48px;
@@ -343,24 +505,22 @@ body{
     }
 }
 @media(max-width:650px){
+    .block3-absolut{
+        padding: 32px 0 32px 94px ;
+        bottom: 87px;
+        right: -1px;
+        border-radius:15px 0 0 15px;
+
+    }
     .col-block3 p{
         max-width: 100%;
     }
-    .navbar-list{
-        justify-content: space-between;
-    }
-   .navbar-list li{
-       max-width: 60px;
-   }
    .intro-img, .col1 img , .col2 img{
        max-width: 100%;
        margin-left: 0;
    }
    .main-heading, .col-block3 h2{
        max-width: 100%;
-   }
-   body{
-       margin-left: 30px;
    }
    .main-heading, .col-block3 h2, .product-block-text h2{
        font-size: 30px;
@@ -374,38 +534,22 @@ body{
    .col-block3{
        margin-left: 10%;
    }
+   
 }
 @media(max-width: 550px){
-    .logo-list{
-        gap: 15px;
-    }
-    .logo-list img{
-        max-width: 100%;
-
-    }
     .product-block img{
         top: -400px;
     }
     .product-sect{
         margin-top: 650px;
     }
-    .navbar-list li{
-        font-size: 13px;
-        max-width: 50px;
-    }
     .product-block-text{
         margin-left: 5%;
     }
+   
 }
 @media(max-width: 430px){
-    .navbar-list li{
-        font-size: 12px;
-        max-width: 40px;
-        
-    }
-    .navbar-list{
-        gap:10px;
-    }
+
     .main-heading, .col-block3 h2, .product-block-text h2{
         font-size: 20px;
     }
@@ -452,15 +596,9 @@ body{
 @media(max-width:365px) {
     .btn-flex-product{
         flex-direction: column;
-    
+
     }
-    .navbar{
-        margin-left: -15px;
-    }
-    .navbar-nav{
-        margin-top: 0;
-    }
-    .btn-flex-product .btn, .btn-product{
+    .btn-flex-product .btn,  .btn-product{
         max-width: 150px;
         margin: 0;
     }
